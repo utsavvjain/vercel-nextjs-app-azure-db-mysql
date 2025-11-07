@@ -29,7 +29,7 @@ export default function Home({ products }) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const data = await prisma.product.findMany({
     include: {
       category: true,
